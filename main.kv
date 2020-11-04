@@ -1,0 +1,37 @@
+#:kivy 1.11.0
+<Button>:
+    background_color: (1,1,1,1) if self.state == 'normal' else (0.8, 0.3, 0.3, 1)
+
+<Game>:
+    name: "game"
+    Button:
+        id: play
+        text: "Play"
+        size_hint_y: 0.2
+        background_color: (1,1,1,1) if self.state == 'normal' else (0.8, 0.3, 0.3, 1)
+        on_release: root.showPopup()
+
+<Level>:
+    Button:
+        text: "Easy"
+        size_hint: 0.8, 0.2
+        pos_hint: {"x": 0.1, "top": 0.96}
+        on_release: app.root.setEasyLevel()
+
+    Button:
+        text: "Normal"
+        size_hint: 0.8, 0.2
+        pos_hint: {"x": 0.1, "top": 0.72}
+        on_release: app.root.setNormalLevel()
+
+    Button:
+        text: "Hard"
+        size_hint: 0.8, 0.2
+        pos_hint: {"x": 0.1, "top": 0.48}
+        on_release: app.root.setHardLevel()
+
+    Button:
+        text: "Expert"
+        size_hint: 0.8, 0.2
+        pos_hint: {"x": 0.1, "top": 0.24}
+        on_release: app.root.setExpertLevel()
